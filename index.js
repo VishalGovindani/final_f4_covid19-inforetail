@@ -103,7 +103,7 @@ app.post ('/market/product/product1',(req,res)=>{
             console.log('Done!');
         }
     });
-    res.redirect("/ordered/" + info.name + "/" + info.qty + "/")
+    res.redirect("/ordered/" + info.name + "/" + info.qty + "/" + info.adddress + "/")
 })
 
 
@@ -155,11 +155,16 @@ app.get("/market/product", (req, res) => {
 app.get("/market/product/product1", (req, res) => {
     res.render('product1.html');
 })
+app.get("/market/product/product2", (req, res) => {
+    res.render('oxi.html');
+})
 app.get("/feedback", (req, res) => {
     res.render('feedback.html');
 })
-app.get("/ordered/:id/:qty", (req, res) => {
-    res.render('ordered.ejs',{Name:req.params.id,quantity:req.qty});
+
+app.get("/ordered/:id/:qty/:addr", (req, res) => {
+   
+    res.render('ordered.html',{Name:req.params.id,quantity:req.params.qty,ADDR:req.params.addr});
 })
 
 app.listen(8080, () => {
