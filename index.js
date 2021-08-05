@@ -167,6 +167,8 @@ app.get("/ordered/:id/:qty/:addr", (req, res) => {
     res.render('ordered.html',{Name:req.params.id,quantity:req.params.qty,ADDR:req.params.addr});
 })
 
-app.listen(8080, () => {
+let port = process.env.PORT || 8080
+
+app.listen(port, () => {
     console.log("Server Started!!!");
 })
