@@ -53,14 +53,15 @@
     </div>
     <div class="bill">
 
-        <h2>your name: <p id="name"> <%= Name %>  </p></h2>
+        <h2>Your Name: <p id="name"> <%= Name %>  </p></h2>
         <br>
-        <h2>product price:125</h2>
+        <h2>Product price:<%=price %></h2>
         <br>
         <H2>Delievery address: <p id="address"> <%=ADDR %> </p></H2>
-        <h2>quantity: <p id="quantity"> <%=quantity %>  </p></h2>
+        <h2>Quantity: <p id="quantity"> <%=quantity %>  </p></h2>
         <br>
-        <h2>total bill: <p id="total bill">  <%=quantity*125 %>  </p></h2>
+        <h2>Total bill: ₹<p id="total bill">  <%=quantity*price %>  </p>+ ₹49 Delievery charge</h2>
+        <h2>=₹<p id="total bill">  <%=quantity*price + 49 %>  </p></h2>
        
         
     
